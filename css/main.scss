@@ -1,0 +1,182 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    }
+
+    /* ------ COLORS ------ */
+
+    $purple: hsl(259, 100%, 65%);
+    $light-red: hsl(0, 100%, 67%);
+    $white: hsl(0, 0%, 100%);
+    $off-White: hsl(0, 0%, 94%);
+    $light-gray: hsl(0, 0%, 86%);
+    $smokey-grey: hsl(0, 1%, 44%);
+    $off-black: hsl(0, 0%, 8%);
+
+    /* ------ FONTS ------ */
+
+    @font-face {
+    font-family: PoppinsRegular;
+    src: url(../assets/fonts/Poppins-Regular.ttf);
+    }
+    @font-face {
+    font-family: PoppinsBold;
+    src: url(../assets/fonts/Poppins-Bold.ttf);
+    }
+    @font-face {
+    font-family: PoppinsItalic;
+    src: url(../assets/fonts/Poppins-Italic.ttf);
+    }
+    @font-face {
+    font-family: PoppinsBoldItalic;
+    src: url(../assets/fonts/Poppins-BoldItalic.ttf);
+    }
+    @font-face {
+    font-family: PoppinsExtraBold;
+    src: url(../assets/fonts/Poppins-ExtraBold.ttf);
+    }
+
+    body {
+    width: 100%;
+    min-height: 100lvh;
+    font-family: PoppinsRegular;
+    background-color: $off-White;
+    display: grid;
+    place-items: center;
+    color: black;
+
+    .box {
+        width: 60%;
+        // min-width: fit-content;
+        max-width: 640px;
+        background-color: $white;
+        padding: 2rem;
+        border: 1px solid transparent;
+        border-radius: 1rem 1rem 7rem 1rem;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        .date {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1.4rem;
+
+        .date-item {
+            display: flex;
+            flex-direction: column;
+
+            label {
+            color: $smokey-grey;
+            font-size: 0.6rem;
+            font-family: PoppinsBold;
+            letter-spacing: 0.1rem;
+            }
+
+            input {
+            width: 100%;
+            max-width: 140px;
+            font-family: PoppinsBold;
+            font-size: 32px;
+            line-height: 32px;
+            padding: 0 0.8rem;
+            border: 1px solid $light-gray;
+            border-radius: 0.3rem;
+            margin-top: 0.2rem;
+            transition: border-color 400 ease;
+
+            &:hover {
+                border-color: $purple;
+            }
+            }
+
+            .error {
+            margin-top: 0.1rem;
+            font-size: 0.6rem;
+            text-align: center;
+            color: crimson;
+            }
+        }
+        }
+
+        .line {
+        margin-top: 1rem;
+        width: 100%;
+        position: relative;
+        .icon {
+            background-color: $purple;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            margin-left: auto;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 400 ease-in;
+
+            &:hover {
+            background-color: $off-black;
+            }
+
+            img {
+            width: 40px;
+            height: 40px;
+            }
+        }
+        }
+        .line::before {
+        content: "";
+        width: 100%;
+        height: 1.6px;
+        background-color: $off-White;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 1;
+        }
+    }
+
+    .results {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        font-family: PoppinsBoldItalic;
+        div {
+        span {
+            padding-right: 0.3rem;
+            font-size: 4rem;
+            color: $purple;
+        }
+        }
+    }
+    }
+
+    @media (max-width: 1000px) {
+    body {
+        .box {
+        width: 80%;
+        }
+    }
+    }
+
+    @media (max-width: 550px) {
+    body {
+        .box {
+        width: 86%;
+        .date {
+            gap: 1rem;
+        }
+        .line {
+            .icon {
+            margin: 0 auto;
+            }
+        }
+        }
+    }
+    }
