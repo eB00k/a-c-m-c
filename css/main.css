@@ -135,6 +135,9 @@ body .results div span {
   body .box {
     width: 80%;
   }
+  body .box .date .date-item input {
+    font-size: 24px;
+  }
 }
 @media (max-width: 550px) {
   body .box {
